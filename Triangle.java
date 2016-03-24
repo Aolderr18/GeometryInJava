@@ -27,6 +27,25 @@ public class Triangle {
 		return new LineSegment(vertexA, vertexB);
 	}
 	
+	double perimeter() { // This is the sum of the sides.
+		return sideA().segmentLength() + sideB().segmentLength() + sideC().segmentLength();
+	}
+	
+	double angleA() { // This is the measure of angleA.
+		return 180.0 * ((Math.acos((sideB().segmentLength() + sideC().segmentLength() - sideA().segmentLength())
+				/ (2.0 * sideB().segmentLength() * sideC().segmentLength()))) / Math.PI);
+	}
+	
+	double angleB() { // This is the measure of angleB.
+		return 180.0 * ((Math.acos((sideA().segmentLength() + sideC().segmentLength() - sideB().segmentLength())
+				/ (2.0 * sideA().segmentLength() * sideC().segmentLength()))) / Math.PI);
+	}
+	
+	double angleC() { // This is the measure of angleC.
+		return 180.0 * ((Math.acos((sideA().segmentLength() + sideB().segmentLength() - sideC().segmentLength())
+				/ (2.0 * sideA().segmentLength() * sideB().segmentLength()))) / Math.PI);
+	}
+	
 	// Create mutators.
 	
 	public void setVertexA(Point3DSpace vertexA) {
