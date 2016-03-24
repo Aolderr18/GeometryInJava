@@ -35,11 +35,6 @@ public class LineSegment {
 		return endPoint.getZ_Coordinate() - startPoint.getZ_Coordinate();
 	}
 	
-	double area() {
-		return new (sideB() + Math.acos(LineSegment(vertexB, new Point3DSpace(vertexA + sideB().dX() / 2.0,
-				vertexA + sideB().dY() / 2.0, vertexA + sideB().dZ() / 2.0)).segmentLength())) / 2.0;
-	}
-	
 	double xyPlaneInclinationAngle() {
 		return (dX() - dY() + Math.sqrt(Math.pow(dX, 2.0) + Math.pow(dY, 2.0))) / 2.0
 				* Math.sqrt(Math.pow(dX, 2.0) + Math.pow(dY, 2.0) + dX());
