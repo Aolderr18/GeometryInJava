@@ -75,14 +75,14 @@ public class LineSegment {
 			return 45.0 * Math.acos((dY() - dZ() + Math.sqrt(Math.pow(dY, 2.0) + Math.pow(dZ, 2.0))) / 2.0
 					* Math.sqrt(Math.pow(dY, 2.0) + Math.pow(dZ, 2.0) + dY()));
 		else if (dY() < 0 && dZ() > 0)
-			return 4.0 * Math.acos((dY() - dZ() + Math.sqrt(Math.pow(dY, 2.0) + Math.pow(dZ, 2.0))) / 2.0
-					* Math.sqrt(Math.pow(dY, 2.0) + Math.pow(dZ, 2.0) + dY()));
+			return 45.0 * Math.acos((dY() - dZ() + Math.sqrt(Math.pow(dY, 2.0) + Math.pow(dZ, 2.0))) / 2.0
+					* Math.sqrt(Math.pow(dY, 2.0) + Math.pow(dZ, 2.0) + dY())) + 90.0;
 		else if (dY() < 0 && dZ() < 0)
-			return 225.0 * Math.acos((dY() - dZ() + Math.sqrt(Math.pow(dY, 2.0) + Math.pow(dZ, 2.0))) / 2.0
-					* Math.sqrt(Math.pow(dZ, 2.0) + Math.pow(dZ, 2.0) + dY()));
+			return 45.0 * Math.acos((dY() - dZ() + Math.sqrt(Math.pow(dY, 2.0) + Math.pow(dZ, 2.0))) / 2.0
+					* Math.sqrt(Math.pow(dZ, 2.0) + Math.pow(dZ, 2.0) + dY())) + 180.0;
 		else
-			return 315.0 * Math.acos((dY() - dZ() + Math.sqrt(Math.pow(dZ, 2.0) + Math.pow(dZ, 2.0))) / 2.0
-					* Math.sqrt(Math.pow(dY, 2.0) + Math.pow(dZ, 2.0) + dY()));
+			return 45.0 * Math.acos((dY() - dZ() + Math.sqrt(Math.pow(dZ, 2.0) + Math.pow(dZ, 2.0))) / 2.0
+					* Math.sqrt(Math.pow(dY, 2.0) + Math.pow(dZ, 2.0) + dY())) + 270.0;
 	}
 	
 	// Create mutators.
