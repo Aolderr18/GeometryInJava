@@ -23,6 +23,68 @@ public class LineSegment {
 				+ Math.pow(endPoint.getZ_Coordinate() - startPoint.getZ_Coordinate(), 2.0));
 	}
 	
+	double dX() { // This is how much the x coordinate changes from the start point to the end point.
+		return endPoint.getX_Coordinate() - startPoint.getX_Coordinate();
+	}
+	
+	double dY() { // This is how much the y coordinate changes from the start point to the end point.
+		return endPoint.getY_Coordinate() - startPoint.getY_Coordinate();	
+	}
+	
+	double dZ() { // This is how much the z coordinate changes from the start point to the end point.
+		return endPoint.getZ_Coordinate() - startPoint.getZ_Coordinate();
+	}
+	
+	double xyPlaneInclinationAngle() {
+		return (dX() - dY() + Math.sqrt(Math.pow(dX, 2.0) + Math.pow(dY, 2.0))) / 2.0
+				* Math.sqrt(Math.pow(dX, 2.0) + Math.pow(dY, 2.0) + dX());
+	}
+	
+	double xyPlaneInclinationAngle() {
+		if (dX() > 0 && dY() > 0)
+			return 45.0 * Math.acos((dX() - dY() + Math.sqrt(Math.pow(dX, 2.0) + Math.pow(dY, 2.0))) / 2.0
+					* Math.sqrt(Math.pow(dX, 2.0) + Math.pow(dY, 2.0) + dX()));
+		else if (dX() < 0 && dY() > 0)
+			return 135.0 * Math.acos((dX() - dY() + Math.sqrt(Math.pow(dX, 2.0) + Math.pow(dY, 2.0))) / 2.0
+					* Math.sqrt(Math.pow(dX, 2.0) + Math.pow(dY, 2.0) + dX()));
+		else if (dX() < 0 && dY() < 0)
+			return 225.0 * Math.acos((dX() - dY() + Math.sqrt(Math.pow(dX, 2.0) + Math.pow(dY, 2.0))) / 2.0
+					* Math.sqrt(Math.pow(dX, 2.0) + Math.pow(dY, 2.0) + dX()));
+		else
+			return 315.0 * Math.acos((dX() - dY() + Math.sqrt(Math.pow(dX, 2.0) + Math.pow(dY, 2.0))) / 2.0
+					* Math.sqrt(Math.pow(dX, 2.0) + Math.pow(dY, 2.0) + dX()));
+	}
+	
+	double xzPlaneInclinationAngle() {
+		if (dX() > 0 && dZ() > 0)
+			return 45.0 * Math.acos((dX() - dZ() + Math.sqrt(Math.pow(dX, 2.0) + Math.pow(dZ, 2.0))) / 2.0
+					* Math.sqrt(Math.pow(dX, 2.0) + Math.pow(dZ, 2.0) + dX()));
+		else if (dX() < 0 && dZ() > 0)
+			return 135.0 * Math.acos((dX() - dZ() + Math.sqrt(Math.pow(dX, 2.0) + Math.pow(dZ, 2.0))) / 2.0
+					* Math.sqrt(Math.pow(dX, 2.0) + Math.pow(dZ, 2.0) + dX()));
+		else if (dX() < 0 && dZ() < 0)
+			return 225.0 * Math.acos((dX() - dZ() + Math.sqrt(Math.pow(dX, 2.0) + Math.pow(dZ, 2.0))) / 2.0
+					* Math.sqrt(Math.pow(dZ, 2.0) + Math.pow(dZ, 2.0) + dX()));
+		else
+			return 315.0 * Math.acos((dX() - dZ() + Math.sqrt(Math.pow(dZ, 2.0) + Math.pow(dZ, 2.0))) / 2.0
+					* Math.sqrt(Math.pow(dX, 2.0) + Math.pow(dZ, 2.0) + dX()));
+	}
+	
+	double yzPlaneInclinationAngle() {
+		if (dY() > 0 && dZ() > 0)
+			return 45.0 * Math.acos((dY() - dZ() + Math.sqrt(Math.pow(dY, 2.0) + Math.pow(dZ, 2.0))) / 2.0
+					* Math.sqrt(Math.pow(dY, 2.0) + Math.pow(dZ, 2.0) + dY()));
+		else if (dY() < 0 && dZ() > 0)
+			return 135.0 * Math.acos((dY() - dZ() + Math.sqrt(Math.pow(dY, 2.0) + Math.pow(dZ, 2.0))) / 2.0
+					* Math.sqrt(Math.pow(dY, 2.0) + Math.pow(dZ, 2.0) + dY()));
+		else if (dY() < 0 && dZ() < 0)
+			return 225.0 * Math.acos((dY() - dZ() + Math.sqrt(Math.pow(dY, 2.0) + Math.pow(dZ, 2.0))) / 2.0
+					* Math.sqrt(Math.pow(dZ, 2.0) + Math.pow(dZ, 2.0) + dY()));
+		else
+			return 315.0 * Math.acos((dY() - dZ() + Math.sqrt(Math.pow(dZ, 2.0) + Math.pow(dZ, 2.0))) / 2.0
+					* Math.sqrt(Math.pow(dY, 2.0) + Math.pow(dZ, 2.0) + dY()));
+	}
+	
 	// Create mutators.
 	
 	public void setStartPoint(Point3DSpace startPoint) {
