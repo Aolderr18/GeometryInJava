@@ -45,14 +45,14 @@ public class LineSegment {
 			return 45.0 * Math.acos((dX() - dY() + Math.sqrt(Math.pow(dX, 2.0) + Math.pow(dY, 2.0))) / 2.0
 					* Math.sqrt(Math.pow(dX, 2.0) + Math.pow(dY, 2.0) + dX()));
 		else if (dX() < 0 && dY() > 0)
-			return 135.0 * Math.acos((dX() - dY() + Math.sqrt(Math.pow(dX, 2.0) + Math.pow(dY, 2.0))) / 2.0
-					* Math.sqrt(Math.pow(dX, 2.0) + Math.pow(dY, 2.0) + dX()));
+			return 45.0 * Math.acos((dX() - dY() + Math.sqrt(Math.pow(dX, 2.0) + Math.pow(dY, 2.0))) / 2.0
+					* Math.sqrt(Math.pow(dX, 2.0) + Math.pow(dY, 2.0) + dX())) + 90.0;
 		else if (dX() < 0 && dY() < 0)
-			return 225.0 * Math.acos((dX() - dY() + Math.sqrt(Math.pow(dX, 2.0) + Math.pow(dY, 2.0))) / 2.0
-					* Math.sqrt(Math.pow(dX, 2.0) + Math.pow(dY, 2.0) + dX()));
+			return 45.0 * Math.acos((dX() - dY() + Math.sqrt(Math.pow(dX, 2.0) + Math.pow(dY, 2.0))) / 2.0
+					* Math.sqrt(Math.pow(dX, 2.0) + Math.pow(dY, 2.0) + dX())) + 180.0;
 		else
-			return 315.0 * Math.acos((dX() - dY() + Math.sqrt(Math.pow(dX, 2.0) + Math.pow(dY, 2.0))) / 2.0
-					* Math.sqrt(Math.pow(dX, 2.0) + Math.pow(dY, 2.0) + dX()));
+			return 45.0 * Math.acos((dX() - dY() + Math.sqrt(Math.pow(dX, 2.0) + Math.pow(dY, 2.0))) / 2.0
+					* Math.sqrt(Math.pow(dX, 2.0) + Math.pow(dY, 2.0) + dX())) + 270.0;
 	}
 	
 	double xzPlaneInclinationAngle() {
@@ -60,14 +60,14 @@ public class LineSegment {
 			return 45.0 * Math.acos((dX() - dZ() + Math.sqrt(Math.pow(dX, 2.0) + Math.pow(dZ, 2.0))) / 2.0
 					* Math.sqrt(Math.pow(dX, 2.0) + Math.pow(dZ, 2.0) + dX()));
 		else if (dX() < 0 && dZ() > 0)
-			return 135.0 * Math.acos((dX() - dZ() + Math.sqrt(Math.pow(dX, 2.0) + Math.pow(dZ, 2.0))) / 2.0
-					* Math.sqrt(Math.pow(dX, 2.0) + Math.pow(dZ, 2.0) + dX()));
+			return 45.0 * Math.acos((dX() - dZ() + Math.sqrt(Math.pow(dX, 2.0) + Math.pow(dZ, 2.0))) / 2.0
+					* Math.sqrt(Math.pow(dX, 2.0) + Math.pow(dZ, 2.0) + dX())) + 90.0;
 		else if (dX() < 0 && dZ() < 0)
-			return 225.0 * Math.acos((dX() - dZ() + Math.sqrt(Math.pow(dX, 2.0) + Math.pow(dZ, 2.0))) / 2.0
-					* Math.sqrt(Math.pow(dZ, 2.0) + Math.pow(dZ, 2.0) + dX()));
+			return 45.0 * Math.acos((dX() - dZ() + Math.sqrt(Math.pow(dX, 2.0) + Math.pow(dZ, 2.0))) / 2.0
+					* Math.sqrt(Math.pow(dZ, 2.0) + Math.pow(dZ, 2.0) + dX())) + 180.0;
 		else
-			return 315.0 * Math.acos((dX() - dZ() + Math.sqrt(Math.pow(dZ, 2.0) + Math.pow(dZ, 2.0))) / 2.0
-					* Math.sqrt(Math.pow(dX, 2.0) + Math.pow(dZ, 2.0) + dX()));
+			return 45.0 * Math.acos((dX() - dZ() + Math.sqrt(Math.pow(dZ, 2.0) + Math.pow(dZ, 2.0))) / 2.0
+					* Math.sqrt(Math.pow(dX, 2.0) + Math.pow(dZ, 2.0) + dX())) + 270.0;
 	}
 	
 	double yzPlaneInclinationAngle() {
@@ -75,7 +75,7 @@ public class LineSegment {
 			return 45.0 * Math.acos((dY() - dZ() + Math.sqrt(Math.pow(dY, 2.0) + Math.pow(dZ, 2.0))) / 2.0
 					* Math.sqrt(Math.pow(dY, 2.0) + Math.pow(dZ, 2.0) + dY()));
 		else if (dY() < 0 && dZ() > 0)
-			return 135.0 * Math.acos((dY() - dZ() + Math.sqrt(Math.pow(dY, 2.0) + Math.pow(dZ, 2.0))) / 2.0
+			return 4.0 * Math.acos((dY() - dZ() + Math.sqrt(Math.pow(dY, 2.0) + Math.pow(dZ, 2.0))) / 2.0
 					* Math.sqrt(Math.pow(dY, 2.0) + Math.pow(dZ, 2.0) + dY()));
 		else if (dY() < 0 && dZ() < 0)
 			return 225.0 * Math.acos((dY() - dZ() + Math.sqrt(Math.pow(dY, 2.0) + Math.pow(dZ, 2.0))) / 2.0
