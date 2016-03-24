@@ -26,7 +26,9 @@ public class Triangle {
 	LineSegment sideC() {
 		return new LineSegment(vertexA, vertexB);
 	}
-
+	
+	// Create mutators.
+	
 	public void setVertexA(Point3DSpace vertexA) {
 		this.vertexA = vertexA;
 	}
@@ -42,7 +44,9 @@ public class Triangle {
 	public Point3DSpace getVertexA() {
 		return vertexA;
 	}
-
+	
+	// Create accessors.
+	
 	public Point3DSpace getVertexB() {
 		return vertexB;
 	}
