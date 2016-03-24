@@ -1,5 +1,7 @@
 package Geometry;
-
+/**
+* This class is used for creating instances of line segments in 3 dimensional space. 
+*/
 public class LineSegment {
 	Point3DSpace startPoint;
 	Point3DSpace endPoint;
@@ -13,12 +15,16 @@ public class LineSegment {
 		setEndPoint(endPoint);
 	}
 
-	double segmentLength() {
+	double segmentLength() {/* This is the distance between the startPoint and the endPoint. The
+	* Pythagorean theorem is used.
+	*/
 		return Math.sqrt(Math.pow(endPoint.getX_Coordinate() - startPoint.getX_Coordinate(), 2.0)
 				+ Math.pow(endPoint.getY_Coordinate() - startPoint.getY_Coordinate(), 2.0)
 				+ Math.pow(endPoint.getZ_Coordinate() - startPoint.getZ_Coordinate(), 2.0));
 	}
-
+	
+	// Create mutators.
+	
 	public void setStartPoint(Point3DSpace startPoint) {
 		this.startPoint = startPoint;
 	}
@@ -26,7 +32,9 @@ public class LineSegment {
 	public void setEndPoint(Point3DSpace endPoint) {
 		this.endPoint = endPoint;
 	}
-
+	
+	// Create accessors.
+	
 	public Point3DSpace getStartPoint() {
 		return startPoint;
 	}
