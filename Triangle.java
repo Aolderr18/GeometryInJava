@@ -32,8 +32,11 @@ public class Triangle {
 	}
 	
 	double area() {
-		return new (sideB() + Math.acos(LineSegment(vertexB, new Point3DSpace(vertexA + sideB().dX() / 2.0,
-				vertexA + sideB().dY() / 2.0, vertexA + sideB().dZ() / 2.0)).segmentLength())) / 2.0;
+		return (sideB().segmentLength() + new LineSegment(vertexB,
+				new Point3DSpace(vertexA.getX_Coordinate() + sideB().dX() / 2.0,
+						vertexA.getY_Coordinate() + sideB().dY() / 2.0, vertexA.getZ_Coordinate() + sideB().dZ() / 2.0))
+								.segmentLength())
+				/ 2.0;
 	}
 	
 	double angleA() { // This is the measure of angleA.
